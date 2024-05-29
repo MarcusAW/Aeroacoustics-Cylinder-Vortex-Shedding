@@ -17,7 +17,7 @@ FoamFile
 
 dimensions      [0 0 -1 0 0 0 0];
 
-internalField   uniform 4.65;	//tu = 5 - mut/mu=10
+internalField   uniform 4.65;
 
 boundaryField
 {
@@ -32,16 +32,13 @@ boundaryField
     }
     cylinder
     {
-        //type            fixedValue;
-        //value           uniform 2860;
         type            omegaWallFunction;
         value           $internalField;;
     }
     "(top|bottom)"
     {
         type            symmetry;
-    }
-    
+    }   
     frontAndBack
     {
         type            symmetry;
