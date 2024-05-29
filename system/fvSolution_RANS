@@ -21,7 +21,7 @@ solvers
     {
         solver           GAMG;
         tolerance        1e-8;
-        relTol           0.05; //switch to 0 for LES
+        relTol           0.05; 
         smoother         GaussSeidel;
         nPreSweeps       0;
         nPostSweeps      2;
@@ -29,7 +29,7 @@ solvers
         agglomerator     faceAreaPair;
         nCellsInCoarsestLevel 100;
         mergeLevels      1;
-	    minIter		 3;
+	minIter		 3;
     }
 
     pFinal
@@ -56,6 +56,7 @@ solvers
         relTol          0;
 	minIter		1;
     }
+
     k
     {
         //solver          smoothSolver;
@@ -86,9 +87,7 @@ SIMPLE
     nNonOrthogonalCorrectors 1;
     pRefCell        0;
     pRefValue       0;
-
     consistent on;
-
     residualControl
     {
         p               1e-3;
@@ -98,8 +97,6 @@ SIMPLE
         omega           1e-3;
     }
 }
-
-//SIMPLE consistent
 
 relaxationFactors
 {
@@ -117,24 +114,5 @@ relaxationFactors
 	//nut		  0.7;
     }
 }
-
-//SIMPLE
-/*
-relaxationFactors
-{
-    fields
-    {
-        p               0.3;
-    }
-    equations
-    {
-        p               0.3;
-        U               0.7;
-        k               0.7;
-        omega           0.7;
-	nut		0.7;
-    }
-}
-*/
 
 // ************************************************************************* //
