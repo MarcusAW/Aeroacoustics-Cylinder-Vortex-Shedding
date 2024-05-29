@@ -1,0 +1,103 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     simpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         5000;
+
+deltaT          1;
+
+writeControl    adjustable;
+
+writeInterval   500; 
+
+purgeWrite      50;
+
+writeFormat     ascii;
+
+writePrecision  8;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   8;
+
+runTimeModifiable yes;
+
+maxCo   0.9;
+
+functions
+{
+    forces
+    {
+        type            forces;
+        libs            (forces);
+        writeControl    writeTime;
+        timeStart       0;
+
+        patches         (cylinder);
+        CofR            (0.10 0.15 -0.0157);
+        writeFields     yes;
+
+        rho             rhoInf;
+        rhoInf          1.1987;
+    }
+    forceCoeffs
+    {
+        type                forceCoeffs;
+        libs                ( "libforces.so" );
+        writeControl        timeStep;
+        timeInterval        1;
+     
+        patches             ("cylinder");
+        rho                 rhoInf;
+        log                 true;
+         
+        liftDir             (0 1 0);
+        dragDir             (1 0 0);
+        CofR                (0.10 0.15 -0.0157);
+        pitchAxis           (0 0 1);
+         
+        magUInf             7.6;
+        rhoInf              1.1987;
+        lRef                0.02;
+        Aref                6.28e-4;
+    }
+    yPlus
+    {
+        type yPlus;
+        libs (fieldFunctionObjects);
+        patches (cylinder);
+        writeControl timeStep;
+        writeInterval 10;
+        writeToFile true;
+        timeStart 0;
+        timeEnd 4000;
+        executeControl timeStep;
+        executeInterval 1;
+    }
+}
+
+
+// ************************************************************************* //

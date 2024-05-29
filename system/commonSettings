@@ -1,0 +1,164 @@
+        functionObjectLibs ("libAcoustics.so");
+        log             true;
+        probeFrequency  1;
+        timeStart       1.7;
+        timeEnd         1.9;
+        writeFft        true;
+        c0              343;
+        pName           p;
+        pInf            0;//for pisoFoam
+        rhoName         rho;
+        rho             rhoInf;
+        rhoInf          1.1845 ;
+        
+        CofR (0 0 0);
+        
+        observers
+        {
+            nearmictheta15 
+{
+    position (2.031852e+00 6.676381e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta30 
+{
+    position (1.832051e+00 1.150000e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta45 
+{
+    position (1.514214e+00 1.564214e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta60 
+{
+    position (1.100000e+00 1.882051e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta75 
+{
+    position (6.176381e-01 2.081852e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta90 
+{
+    position (1.000000e-01 2.150000e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta105 
+{
+    position (-4.176381e-01 2.081852e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta120 
+{
+    position (-9.000000e-01 1.882051e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta135 
+{
+    position (-1.314214e+00 1.564214e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta150 
+{
+    position (-1.632051e+00 1.150000e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta165 
+{
+    position (-1.831852e+00 6.676381e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta180 
+{
+    position (-1.900000e+00 1.500000e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta195 
+{
+    position (-1.831852e+00 -3.676381e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta210 
+{
+    position (-1.632051e+00 -8.500000e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta225 
+{
+    position (-1.314214e+00 -1.264214e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta240 
+{
+    position (-9.000000e-01 -1.582051e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta255 
+{
+    position (-4.176381e-01 -1.781852e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta270 
+{
+    position (1.000000e-01 -1.850000e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta285 
+{
+    position (6.176381e-01 -1.781852e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta300 
+{
+    position (1.100000e+00 -1.582051e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta315 
+{
+    position (1.514214e+00 -1.264214e+00 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta330 
+{
+    position (1.832051e+00 -8.500000e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta345 
+{
+    position (2.031852e+00 -3.676381e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+nearmictheta360 
+{
+    position (2.100000e+00 1.500000e-01 -1.570000e-02);
+    pRef 0.000020;
+    fftFreq 1024;
+}
+        }
+
+
