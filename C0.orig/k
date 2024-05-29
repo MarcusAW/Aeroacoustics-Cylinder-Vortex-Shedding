@@ -17,7 +17,6 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-//internalField   uniform 0.000171735;
 internalField   uniform 0.00008;	// Tu=0.1%, TuL=0.002m
 
 boundaryField
@@ -34,7 +33,6 @@ boundaryField
     cylinder
     {
         type	        kqRWallFunction;
-        //type            fixedValue;
         value           $internalField;
     }
     "(top|bottom)"
