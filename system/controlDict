@@ -51,20 +51,16 @@ functions
 {
     #include "CurleControl"
     #include "fwhControl"
-
     //#include "OFCurle" //OpenFOAM Curle analogy
-
     forces
     {
         type            forces;
         libs            (forces);
         writeControl    writeTime;
         timeStart       0;
-
         patches         (cylinder);
         CofR            (0.10 0.15 -0.0157);
         writeFields     yes;
-
         rho             rhoInf;
         rhoInf          1.1987;
     }
@@ -74,16 +70,13 @@ functions
         libs                ( "libforces.so" );
         writeControl        timeStep;
         timeInterval        1;
-     
         patches             ("cylinder");
         rho                 rhoInf;
-        log                 true;
-         
+        log                 true;  
         liftDir             (0 1 0);
         dragDir             (1 0 0);
         CofR                (0.10 0.15 -0.0157);
-        pitchAxis           (0 0 1);
-         
+        pitchAxis           (0 0 1); 
         magUInf             7.6;
         rhoInf              1.1987;
         lRef                0.02;
@@ -92,17 +85,17 @@ functions
     /*
     yPlus
     {
-    type yPlus;
-    libs (fieldFunctionObjects);
-    patches (cylinder);
-    writeControl adjustable;
-    writeInterval 0.01;
-    writeToFile true;
-    timeStart 0;
-    timeEnd 1.6;
-    executeControl timeStep;
-    executeInterval 1;
-    }
+	    type yPlus;
+	    libs (fieldFunctionObjects);
+	    patches (cylinder);
+	    writeControl adjustable;
+	    writeInterval 0.01;
+	    writeToFile true;
+	    timeStart 0;
+	    timeEnd 1.6;
+	    executeControl timeStep;
+	    executeInterval 1;
+	    }
     */
     fieldAverage
     {
@@ -110,15 +103,11 @@ functions
         functionObjectLibs ("libfieldFunctionObjects.so");
         enabled         true;
         writeControl   outputTime;
-
 	//writeControl   timeStep;
 	//writeInterval  100;
-
 	//cleanRestart true;
-
 	timeStart       0.8;
 	//timeEnd         200;
-
         fields
         (
             U
@@ -127,14 +116,12 @@ functions
                 prime2Mean  on;
                 base        time;
             }
-
             p
             {
                 mean        on;
                 prime2Mean  on;
                 base        time;
             }
-
             nut
             {
                 mean        on;
@@ -147,28 +134,22 @@ functions
     {
         // Where to load it from
         libs            (sampling);
-
         type            probes;
-
         // Name of the directory for probe data
         name            probes;
-
         // Write at same frequency as fields
         writeControl    writeTime;
         writeInterval   1;
-
         // Fields to be probed
         fields
         (
             p U
         );
-
         probeLocations
         (
             (0.1506 0.171624 -0.0157)
         );
     }
-
 }
 
 
