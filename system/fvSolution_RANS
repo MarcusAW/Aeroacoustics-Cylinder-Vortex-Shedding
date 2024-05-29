@@ -35,7 +35,7 @@ solvers
     pFinal
     {
 	    $p;
-        tolerance        1e-6;
+            tolerance        1e-6;
 	    relTol		 0;
 	    minIter		 1;
     }
@@ -59,26 +59,18 @@ solvers
 
     k
     {
-        //solver          smoothSolver;
-        //smoother 	  GaussSeidel;
-
         solver          PBiCGStab;
         preconditioner  DILU;
 	tolerance       1e-08;
         relTol          0.001;
-        //relTol          0;
     }
 
     omega
     {
-        //solver          smoothSolver;
-        //smoother 	  GaussSeidel;
-     
 	solver          PBiCGStab;
         preconditioner  DILU;
 	tolerance       1e-08;
         relTol          0.001;
-        //relTol          0;
     }
 }
 
@@ -102,16 +94,10 @@ relaxationFactors
 {
     fields
     {
-        //p               0.3;
     }
     equations
     {
 	".*"		0.9;
-        //p               0.7;
-        //U               0.7;
-        //k               0.7;
-        //omega           0.7;
-	//nut		  0.7;
     }
 }
 
