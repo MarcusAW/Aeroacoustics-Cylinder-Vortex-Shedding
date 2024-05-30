@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=CAAcylinder
+#SBATCH --job-name=CAAcylinder_mesh
 #SBATCH --time=24:00:00
 #SBATCH --ntasks=36
 #SBATCH --nodes=1
